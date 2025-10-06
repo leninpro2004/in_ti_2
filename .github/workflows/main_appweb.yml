@@ -1,8 +1,10 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - appweb
-
+#name: Build and deploy ASP.Net Core app to Azure Web App - appweb
+- name: Build
+  working-directory: src/Proyecto
+  run: dotnet build --configuration Release
 on:
   push:
     branches:
@@ -62,4 +64,5 @@ jobs:
           app-name: 'appweb'
           slot-name: 'Production'
           package: .
+
           
